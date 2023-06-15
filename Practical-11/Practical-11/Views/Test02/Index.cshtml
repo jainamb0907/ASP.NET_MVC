@@ -1,0 +1,101 @@
+﻿
+@model List<Practical_11.Models.User>
+
+
+
+<h2>Test-02</h2>
+
+<p>
+    @Html.ActionLink("Create New User", "Create",null,new { @class = "create-link" })
+
+
+</p>
+<div class="container shadow-lg p-3 mb-5 bg-body rounded mt-5">
+
+    <table class="table table-hover">
+
+        @*<input class="form-control mr-sm-2 float-right" type="search" placeholder="search" aria-label="search" oninput="">*@
+
+
+        <tr>
+            <th>
+                NAME
+            </th>
+            <th>
+                DOB
+            </th>
+            <th>
+                Address
+            </th>
+
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "edit-link" })
+              </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete-link" })
+
+                </td>
+            
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.create-link, .edit-link, .delete-link').on('click', function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $.get(url, function (data) {
+                    $('#myModal .modal-body').html(data);
+                    $('#myModal').modal('show');
+                });
+            });
+        });
+    </script>
+}
+
+
