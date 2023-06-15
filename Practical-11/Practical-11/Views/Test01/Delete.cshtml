@@ -1,0 +1,29 @@
+﻿@using Practical_11.Models
+@model Practical_11.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+</head>
+<body>
+    <h1>Delete User</h1>
+    <p>Are you sure you want to delete this user?</p>
+    <div>
+        <label for="Name">Name:</label>
+        <span>@Model.Name</span>
+    </div>
+    <div>
+        <label for="DateOfBirth">Date of Birth:</label>
+        <span>@Model.DOB.ToShortDateString()</span>
+    </div>
+    <div>
+        <label for="Address">Address:</label>
+        <span>@Model.Address</span>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete"class="btn btn-danger">
+    }
+</body>
+</html>
