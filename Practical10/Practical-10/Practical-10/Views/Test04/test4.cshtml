@@ -1,0 +1,27 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Division</title>
+</head>
+<body>
+    <h1>Number Division</h1>
+    <form method="post" action="@Url.Action("test4")">
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" name="num1" required><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="text" id="num2" name="num2" required><br>
+
+        <input type="submit" value="Divide">
+    </form>
+    @if (ViewBag.Result != null)
+    {
+        <h2>Result: @ViewBag.Result</h2>
+    }
+
+</body>
+</html>
+
+
