@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Practical_10.Controllers
+{
+    public class EmployeeController : Controller
+    {
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult test1(string name)
+        {
+            return View((object)name);
+        }
+
+
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+    }
+}
