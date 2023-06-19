@@ -24,7 +24,6 @@ Practical14/Practical-14/Practical-14/Web.config
 ###################
 *.com
 *.asax
-*.cs
 *.asax.cs
 *.csproj
 *.config
