@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Practical9.Controllers
 {
-    public class Test2Controller : Controller
+    public class StyleStringController : Controller
     {
         // GET: Test2
         public ActionResult Index()

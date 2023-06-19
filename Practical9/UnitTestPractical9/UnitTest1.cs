@@ -6,13 +6,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestPractical9
 {
     [TestClass]
-    public class Test1ControllerTests
+    public class DisplayStringControllerTests
     {
         [TestMethod]
         public void Index_Should_Return_HelloWorld_View()
         {
             // Arrange
-            Test1Controller controller = new Test1Controller();
+            DisplayStringController controller = new DisplayStringController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
