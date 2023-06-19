@@ -9,12 +9,28 @@ Practical13/Practical-13/Practical-13/fonts
 Practical13/Practical-13/Practical-13/Migrations
 Practical13/Practical-13/Practical-13/Properties
 Practical13/Practical-13/Practical-13/Scripts
+Practical13/Practical-13/Practical-13/favicon.ico
+Practical13/Practical-13/Practical-13/packages.config
+Practical13/Practical-13/Practical-13/Global.asax
+Practical13/Practical-13/Practical-13/Global.asax.cs
+Practical13/Practical-13/Practical-13/Practical-13.csproj
+Practical13/Practical-13/Practical-13/Web.Debug.config
+Practical13/Practical-13/Practical-13/Web.Release.config
+Practical13/Practical-13/Practical-13/Web.config
 
 
 ###################
 # compiled source #
 ###################
 *.com
+*.asax
+*.cs
+*.asax.cs
+*.csproj
+*.config
+*.ico
+*.Release.config
+*.Debug.config
 *.class
 *.dll
 *.exe
