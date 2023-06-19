@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Practical_13.Models.Designation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationName)
+            @Html.DisplayNameFor(model => model.Id)
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignationName)
+                @Html.DisplayFor(modelItem => item.Id)
+
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+            </td>
+            <td>
+                <button class="countButton btn-default" data-id="@item.Id">Count Records</button>
+            </td>
+        </tr>
+    }
+
+</table>
+<div id="result"></div>
+
+@section Scripts{
+    <script>
+    $(document).ready(function () {
+        $(".countButton").click(function () {
+            var id = $(this).data("id");
+            
+        $.ajax({
+            url: "@Url.Action("CountByDesignation", "Designations")",
+            data: { id: id},
+            type: "GET",
+            success: function (data) {
+                $("#result").text("Total count: " + data);
+            },
+            error: function () {
+                alert("Error occurred while counting records.");
+            }
+        });
+    });
+});
+    </script>
+}
