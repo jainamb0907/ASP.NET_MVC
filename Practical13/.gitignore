@@ -15,6 +15,14 @@ Practical13/Practical-13/Practical-13/Scripts
 # compiled source #
 ###################
 *.com
+*.asax
+*.cs
+*.asax.cs
+*.csproj
+*.config
+*.ico
+*.Release.config
+*.Debug.config
 *.class
 *.dll
 *.exe
